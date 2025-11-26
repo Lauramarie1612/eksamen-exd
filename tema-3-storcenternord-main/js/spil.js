@@ -72,8 +72,15 @@ function checkCollisions() {
   // Tjek kollision med mad
   foods = foods.filter((foodEl) => {
     if (isColliding(dodger, foodEl)) {
-      collectFood(foodEl); // ← KALD DEN RIGTIGE FUNKTION
-      return false; // fjern mad fra array
+      score++;
+      updateScore();
+
+      // Vis +1-popup over maden (hent position FØR fjern)
+      const r = foodEl.getBoundingClientRect();
+      spawnScorePopup(r.left + r.width / 2, r.top + r.height / 2, '+1');
+
+      foodEl.remove();
+      return false;
     }
     return true;
   });
@@ -311,36 +318,31 @@ if (btnDown)
     playSoundOnMovement();
   });
 
-/* ------------------------------------------
-   Point POPUP
---------------------------------------------- */
-function createPointPop(x, y) {
+/**
+ * Vis en lille +1 popup ved (clientX, clientY) — client koordinater (f.eks. fra elementposition)
+ * call: spawnScorePopup(clientX, clientY, '+1');
+ */
+function spawnScorePopup(clientX, clientY, text = "+1") {
   const game = document.getElementById("game");
+  if (!game) return;
 
-  const pop = document.createElement("div");
-  pop.className = "point-pop";
-  pop.textContent = "+1";
+  // Konverter client coords til coords relative til #game
+  const rect = game.getBoundingClientRect();
+  const x = clientX - rect.left;
+  const y = clientY - rect.top;
 
-  pop.style.left = x + "px";
-  pop.style.top = y + "px";
+  const el = document.createElement("div");
+  el.className = "score-popup";
+  el.textContent = text;
 
-  game.appendChild(pop);
+  // Juster så teksten vises centreret over punktet
+  el.style.left = `${x}px`;
+  el.style.top = `${y}px`;
+  el.style.transform = "translate(-50%, 0)"; // centrer vandret
+  game.appendChild(el);
 
-  // Fjern efter animation
-  setTimeout(() => pop.remove(), 700);
-}
-
-function collectFood(foodElement) {
-  score++;
-  document.getElementById("score").textContent = score;
-
-  const foodRect = foodElement.getBoundingClientRect();
-  const gameRect = game.getBoundingClientRect();
-
-  const centerX = foodRect.left - gameRect.left + foodRect.width / 2;
-  const centerY = foodRect.top - gameRect.top + foodRect.height / 2;
-
-  createPointPop(centerX, centerY);
-
-  foodElement.remove();
+  // Fjern efter animationen er færdig
+  setTimeout(() => {
+    if (el && el.parentNode) el.parentNode.removeChild(el);
+  }, 900);
 }

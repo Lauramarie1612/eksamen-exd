@@ -259,3 +259,35 @@ body {
     opacity: 0;
   }
 }
+#game {
+  /* Sørg for at containeren er positioneret relativt så popups kan placeres absolut */
+  position: relative;
+}
+
+/* Score popup */
+.score-popup {
+  position: absolute;
+  pointer-events: none;
+  font-weight: 700;
+  color: #ffea00;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
+  transform: translateY(0);
+  opacity: 1;
+  white-space: nowrap;
+  user-select: none;
+  font-size: 18px;
+  line-height: 1;
+  animation: popupMove 800ms ease-out forwards;
+  z-index: 999;
+}
+
+@keyframes popupMove {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-40px) scale(1.15);
+    opacity: 0;
+  }
+}
