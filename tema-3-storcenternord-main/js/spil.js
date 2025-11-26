@@ -72,10 +72,8 @@ function checkCollisions() {
   // Tjek kollision med mad
   foods = foods.filter((foodEl) => {
     if (isColliding(dodger, foodEl)) {
-      score++;
-      updateScore();
-      foodEl.remove();
-      return false;
+      collectFood(foodEl); // ← KALD DEN RIGTIGE FUNKTION
+      return false; // fjern mad fra array
     }
     return true;
   });
@@ -312,3 +310,37 @@ if (btnDown)
     moveDodgerDown();
     playSoundOnMovement();
   });
+
+/* ------------------------------------------
+   Point POPUP
+--------------------------------------------- */
+function createPointPop(x, y) {
+  const game = document.getElementById("game");
+
+  const pop = document.createElement("div");
+  pop.className = "point-pop";
+  pop.textContent = "+1";
+
+  pop.style.left = x + "px";
+  pop.style.top = y + "px";
+
+  game.appendChild(pop);
+
+  // Fjern efter animation
+  setTimeout(() => pop.remove(), 700);
+}
+
+function collectFood(foodElement) {
+  score++;
+  document.getElementById("score").textContent = score;
+
+  const foodRect = foodElement.getBoundingClientRect();
+  const gameRect = game.getBoundingClientRect();
+
+  const centerX = foodRect.left - gameRect.left + foodRect.width / 2;
+  const centerY = foodRect.top - gameRect.top + foodRect.height / 2;
+
+  createPointPop(centerX, centerY);
+
+  foodElement.remove();
+}

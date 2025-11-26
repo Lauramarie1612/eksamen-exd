@@ -230,3 +230,32 @@ body {
 .dine-point {
   color: antiquewhite;
 }
+
+/* point popup */
+.point-pop {
+  position: absolute;
+  pointer-events: none;
+  font-weight: 800;
+  padding: 4px 8px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.95);
+  color: #0a8;
+  transform: translate(-50%, -50%) scale(1);
+  z-index: 999;
+  animation: popUp 700ms ease-out forwards;
+}
+
+@keyframes popUp {
+  0% {
+    transform: translate(-50%, -50%) scale(0.8);
+    opacity: 1;
+  }
+  60% {
+    transform: translate(-50%, -90%) scale(1.1);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-50%, -140%) scale(1);
+    opacity: 0;
+  }
+}
