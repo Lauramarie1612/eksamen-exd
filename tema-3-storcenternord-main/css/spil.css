@@ -291,3 +291,29 @@ body {
     opacity: 0;
   }
 }
+
+/* shake animation når pacman er gamet over */
+@keyframes shake-screen {
+  0% {
+    transform: translate(0, 0);
+  }
+  20% {
+    transform: translate(-10px, 0);
+  }
+  40% {
+    transform: translate(10px, 0);
+  }
+  60% {
+    transform: translate(-10px, 0);
+  }
+  80% {
+    transform: translate(10px, 0);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+.shake {
+  animation: shake-screen 0.4s ease;
+}
