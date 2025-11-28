@@ -155,7 +155,7 @@ function moveEnemyRandom() {
   const targetY = Math.random() * maxY;
 
   // Hvor lang tid skal bevægelsen tage?
-  const duration = 2000 + Math.random() * 2000; // mellem 2-4 sekunder
+  const duration = 10000 + Math.random() * 5000; // mellem 10-15 sekunder
 
   enemy.style.transition = `left ${duration}ms linear, bottom ${duration}ms linear`;
 
@@ -319,9 +319,7 @@ if (btnDown)
   });
 
 /**
- * Vis en lille +1 popup ved (clientX, clientY) — client koordinater (f.eks. fra elementposition)
- * call: spawnScorePopup(clientX, clientY, '+1');
- */
+ * Vis en lille +1 popup ved */
 function spawnScorePopup(clientX, clientY, text = "+1") {
   const game = document.getElementById("game");
   if (!game) return;
