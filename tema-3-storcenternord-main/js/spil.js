@@ -77,7 +77,7 @@ function checkCollisions() {
 
       // Vis +1-popup over maden (hent position FØR fjern)
       const r = foodEl.getBoundingClientRect();
-      spawnScorePopup(r.left + r.width / 2, r.top + r.height / 2, '+1');
+      spawnScorePopup(r.left + r.width / 2, r.top + r.height / 2, "+1");
 
       foodEl.remove();
       return false;
@@ -345,4 +345,25 @@ function spawnScorePopup(clientX, clientY, text = "+1") {
   setTimeout(() => {
     if (el && el.parentNode) el.parentNode.removeChild(el);
   }, 900);
+}
+
+// shake animation når der er game over
+
+function shakeScreen() {
+  game.classList.add("shake");
+
+  setTimeout(() => {
+    game.classList.remove("shake");
+  }, 400); // samme tid som animationen
+}
+
+function triggerGameOver() {
+  if (isGameOver) return;
+  isGameOver = true;
+
+  shakeScreen(); // RYST SKÆRMEN
+
+  playGameoverSound();
+  finalScoreElement.textContent = score;
+  gameOverScreen.classList.add("show");
 }
