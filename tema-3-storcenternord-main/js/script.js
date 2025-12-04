@@ -116,6 +116,7 @@ document.addEventListener("DOMContentLoaded", function () {
   if (aabenKiste) aabenKiste.addEventListener("click", () => spilLyde());
 });
 
+// kiste åben/lukket
 const lukketKiste = document.getElementById("lukketkiste");
 const aabenKiste = document.getElementById("aabenkiste");
 
