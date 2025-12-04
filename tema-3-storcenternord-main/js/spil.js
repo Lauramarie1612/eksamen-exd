@@ -3,6 +3,7 @@
 // Henter elementerne fra HTML
 const game = document.getElementById("game"); // hele spilområdet
 const dodger = document.getElementById("dodger"); // selve fisken/pacman
+const pointSound = document.getElementById("pointSound");
 
 // Score & game over
 const scoreElement = document.getElementById("score");
@@ -78,6 +79,10 @@ function checkCollisions() {
       // Vis +1-popup over maden (hent position FØR fjern)
       const r = foodEl.getBoundingClientRect();
       spawnScorePopup(r.left + r.width / 2, r.top + r.height / 2, "+1");
+
+      pointSound.pause();
+      pointSound.currentTime = 0;
+      pointSound.play();
 
       foodEl.remove();
       return false;
