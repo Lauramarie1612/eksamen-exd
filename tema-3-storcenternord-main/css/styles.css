@@ -175,8 +175,8 @@
 .starfish {
   position: absolute;
   bottom: 3.3vw; /* stå fast på havbunden */
-  left: 28vw; /* justér, så den ligger lige under havfruens hale */
-  width: 8vw;
+  left: 38vw; /* justér, så den ligger lige under havfruens hale */
+  width: 10vw;
   z-index: 3;
   cursor: pointer;
 }
