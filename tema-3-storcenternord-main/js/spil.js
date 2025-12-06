@@ -28,11 +28,11 @@ window.addEventListener("load", () => {
   dodger.style.left = centerX + "px";
   dodger.style.bottom = centerY + "px";
 
-  //tilføjer ond fisk og mad på siden
+  //Tilføjer ond fisk og mad på siden
   spawnNewFoodBatch();
   createEnemy();
 
-  //baggrundsmusik
+  //Baggrundsmusik
   bgMusic.volume = 0.2;
   bgMusic.play();
 });
