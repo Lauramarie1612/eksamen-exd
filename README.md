@@ -16,7 +16,7 @@ Projektet er udviklet med fokus på **Experience Design**, **brugervenlighed**, 
 # Optimeringer lavet i dette EXD projekt
 
 - Forbedring af kisten i figma
-- POP UP effekt +1 point og lyd på point
+- POP UP effekt (+1 point) og lyd ved point
 - SHAKE animation ved game over
 - Lavet den farlige fisk om til en haj og gjort den langsommere
 - Gør knapperne mere CTA
@@ -48,4 +48,15 @@ Den interaktive startskærm lader brugeren møde karakterer fra havet og lære n
 - Taleboble-system
 - Luk boble ved klik undenfor (ikke på en fisk)
 
-# 2. Fiske- Pacman
+# 2. Fiske- Pacman (spil.html)
+
+Et pacman inspiret spil, som er designet til målgruppen 5-7 årige. Man styre selv fisken som skal spise mad og undgå hajen
+
+### Funktioner i spillet
+
+- Bevægelse med piletasterne eller touch-knapperne
+- Fjenden bevæger sig **random** rundt i havet
+- Spilleren samler mad for point
+- **+1point pop-up animation** ved hvert point
+- Bevægelseslyd, point-lyd og game-over lyd
+- Game over-skærm med point og "Spil igen" knap
