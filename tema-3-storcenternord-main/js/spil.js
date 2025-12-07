@@ -3,7 +3,7 @@
 // Henter elementerne fra HTML
 const game = document.getElementById("game"); // hele spilområdet
 const dodger = document.getElementById("dodger"); // selve fisken/pacman
-const pointSound = document.getElementById("pointSound");
+const pointSound = document.getElementById("pointSound"); // lyd ved point
 
 // Score & game over
 const scoreElement = document.getElementById("score");
@@ -323,8 +323,7 @@ if (btnDown)
     playSoundOnMovement();
   });
 
-/**
- * Vis en lille +1 popup ved */
+/* Vis en lille +1 popup ved */
 function spawnScorePopup(clientX, clientY, text = "+1") {
   const game = document.getElementById("game");
   if (!game) return;
