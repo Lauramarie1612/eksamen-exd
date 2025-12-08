@@ -35,10 +35,12 @@ Projektet er udviklet med fokus på **Experience Design**, **brugervenlighed**, 
 - POP UP effekt (+1 point) med en function og const
 - Connected lyd og +1 point ved at sætte lyden ind i koden til +1point ( pointsound)
 - Hajen har fået en langsommere bevægelse funktion ved at ændre i const duration
+- Shake animation ved at tilføje shakescreen
 
 ## Styles.css og Spil.css
 
--
+- Tilføjet reje med en url, ændret width og height så den er blevet større
+- Shake animation så hele skærmen ændre sig med en keyframe og transform
 
 # 1. Startskærm (index.html)
 
