@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
-  // Fiske-array
+  // Fiske-array taleboble
   const fisk = [
     { klasse: "starfish", billede: "img/infoseastar.png" },
     { klasse: "fish1", billede: "img/infonemo.png" },
