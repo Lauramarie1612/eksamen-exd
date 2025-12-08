@@ -160,7 +160,7 @@ function moveEnemyRandom() {
   const targetY = Math.random() * maxY;
 
   // Hvor lang tid skal bevægelsen tage?
-  const duration = 10000 + Math.random() * 5000; // mellem 10-12 sekunder
+  const duration = 9000 + Math.random() * 5000; // hvor hurtig fjenden bevæger sig
 
   enemy.style.transition = `left ${duration}ms linear, bottom ${duration}ms linear`;
 

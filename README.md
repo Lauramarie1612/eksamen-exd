@@ -24,6 +24,22 @@ Projektet er udviklet med fokus på **Experience Design**, **brugervenlighed**, 
 - Nemo fisk om til GIF inde i Photoshop
 - Tilføje Favicon
 
+# Index.html og Spil.html
+
+- Implamenteret min Nemo fisk som GIF i img tags
+- Tilføjet en lyd til point i spil ved en audio, source
+- Linket til favicon både i spil og index filerne med en href
+
+# Script.js og Spil.js
+
+- POP UP effekt (+1 point) med en function og const
+- Connected lyd og +1 point ved at sætte lyden ind i koden til +1point ( pointsound)
+- Hajen har fået en langsommere bevægelse funktion ved at ændre i const duration
+
+## Styles.css og Spil.css
+
+-
+
 # 1. Startskærm (index.html)
 
 Den interaktive startskærm lader brugeren møde karakterer fra havet og lære noget om dem gennem en informationbobel

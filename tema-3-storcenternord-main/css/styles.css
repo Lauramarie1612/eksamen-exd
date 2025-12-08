@@ -132,7 +132,7 @@
 
 .kiste1,
 .kiste2 {
-  width: 300px;
+  width: 20vw;
   cursor: pointer;
   transition: opacity 0.3s ease;
 }
